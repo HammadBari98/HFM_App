@@ -29,11 +29,12 @@ class _Payment_HomeState extends State<Payment_Home> {
         bottomNavigationBar: BottomNavigationBar(
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home,
-                  color: Color(0xff0096be),
-                ),
-                label: "Home"),
+              icon: Icon(
+                Icons.home,
+                color: Color(0xff0096be),
+              ),
+              label: "Home",
+            ),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.location_on,

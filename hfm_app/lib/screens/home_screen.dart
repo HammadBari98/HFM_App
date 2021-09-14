@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hfm_app/OrderService.dart';
 import 'package:hfm_app/screens/FoodServiceScreens/food_home.dart';
 import 'package:hfm_app/screens/PaymentServiceScreens/payment_home.dart';
+import 'package:hfm_app/screens/ShoppingServiceScreens/shopping_home.dart';
 import 'package:hfm_app/screens/profile_screen.dart';
 import 'category_screen.dart';
 import 'login_screen.dart';
@@ -54,129 +55,132 @@ class _Home_ScreenState extends State<Home_Screen> {
                   child: Icon(Icons.person))),
         ],
         backgroundColor: Colors.white,
-        title: Text("Home",
-            style: TextStyle(
-              color: Color(0xff0096be),
-            )),
+        title: Container(
+            height: 35,
+            width: 90,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/imgs/logo.png'),
+                    fit: BoxFit.fill))),
         elevation: 4.0,
         shadowColor: Color(0xff0096be),
       ),
-      drawer: Theme(
-        data: Theme.of(context).copyWith(
-          canvasColor: Colors.white,
-          iconTheme: IconThemeData(
-            color: Colors.white,
-          ),
-        ),
-        child: Drawer(
-            child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(20),
-              child: Center(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Container(
-                      height: 48,
-                      width: 130,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/imgs/logo.png'),
-                              fit: BoxFit.fill)),
-                    ),
-                    Divider(
-                      color: Color(0xff0096be),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Center(
-                      child: ListTile(
-                        leading: Icon(Icons.home, color: Color(0xff0096be)),
-                        title: Text(
-                          "My Profile",
-                          style:
-                              TextStyle(color: Color(0xff0096be), fontSize: 16),
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return Profile_Screen();
-                              },
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                    Divider(),
-                    ListTile(
-                        leading: Icon(Icons.integration_instructions_rounded,
-                            color: Color(0xff0096be)),
-                        title: Text(
-                          "Service Categories",
-                          style:
-                              TextStyle(color: Color(0xff0096be), fontSize: 16),
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return Category();
-                              },
-                            ),
-                          );
-                        }),
-                    Divider(),
-                    ListTile(
-                        leading: Icon(Icons.integration_instructions_rounded,
-                            color: Color(0xff0096be)),
-                        title: Text(
-                          "My Order Service",
-                          style:
-                              TextStyle(color: Color(0xff0096be), fontSize: 16),
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return OrderService();
-                              },
-                            ),
-                          );
-                        }),
-                    Divider(),
-                    ListTile(
-                        leading: Icon(Icons.logout, color: Color(0xff0096be)),
-                        title: Text(
-                          "Logout",
-                          style:
-                              TextStyle(color: Color(0xff0096be), fontSize: 16),
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return Login_Screen();
-                              },
-                            ),
-                          );
-                        })
-                  ],
-                ),
-              ),
-            )
-          ],
-        )),
-      ),
+      // drawer: Theme(
+      //   data: Theme.of(context).copyWith(
+      //     canvasColor: Colors.white,
+      //     iconTheme: IconThemeData(
+      //       color: Colors.white,
+      //     ),
+      //   ),
+      //   child: Drawer(
+      //       child: Column(
+      //     children: [
+      //       Container(
+      //         width: double.infinity,
+      //         padding: EdgeInsets.all(20),
+      //         child: Center(
+      //           child: Column(
+      //             children: [
+      //               SizedBox(
+      //                 height: 30,
+      //               ),
+      //               Container(
+      //                 height: 48,
+      //                 width: 130,
+      //                 decoration: BoxDecoration(
+      //                     image: DecorationImage(
+      //                         image: AssetImage('assets/imgs/logo.png'),
+      //                         fit: BoxFit.fill)),
+      //               ),
+      //               Divider(
+      //                 color: Color(0xff0096be),
+      //               ),
+      //               SizedBox(
+      //                 height: 30,
+      //               ),
+      //               Center(
+      //                 child: ListTile(
+      //                   leading: Icon(Icons.home, color: Color(0xff0096be)),
+      //                   title: Text(
+      //                     "My Profile",
+      //                     style:
+      //                         TextStyle(color: Color(0xff0096be), fontSize: 16),
+      //                   ),
+      //                   onTap: () {
+      //                     Navigator.push(
+      //                       context,
+      //                       MaterialPageRoute(
+      //                         builder: (context) {
+      //                           return Profile_Screen();
+      //                         },
+      //                       ),
+      //                     );
+      //                   },
+      //                 ),
+      //               ),
+      //               Divider(),
+      //               ListTile(
+      //                   leading: Icon(Icons.integration_instructions_rounded,
+      //                       color: Color(0xff0096be)),
+      //                   title: Text(
+      //                     "Service Categories",
+      //                     style:
+      //                         TextStyle(color: Color(0xff0096be), fontSize: 16),
+      //                   ),
+      //                   onTap: () {
+      //                     Navigator.push(
+      //                       context,
+      //                       MaterialPageRoute(
+      //                         builder: (context) {
+      //                           return Category();
+      //                         },
+      //                       ),
+      //                     );
+      //                   }),
+      //               Divider(),
+      //               ListTile(
+      //                   leading: Icon(Icons.integration_instructions_rounded,
+      //                       color: Color(0xff0096be)),
+      //                   title: Text(
+      //                     "My Order Service",
+      //                     style:
+      //                         TextStyle(color: Color(0xff0096be), fontSize: 16),
+      //                   ),
+      //                   onTap: () {
+      //                     Navigator.push(
+      //                       context,
+      //                       MaterialPageRoute(
+      //                         builder: (context) {
+      //                           return OrderService();
+      //                         },
+      //                       ),
+      //                     );
+      //                   }),
+      //               Divider(),
+      //               ListTile(
+      //                   leading: Icon(Icons.logout, color: Color(0xff0096be)),
+      //                   title: Text(
+      //                     "Logout",
+      //                     style:
+      //                         TextStyle(color: Color(0xff0096be), fontSize: 16),
+      //                   ),
+      //                   onTap: () {
+      //                     Navigator.push(
+      //                       context,
+      //                       MaterialPageRoute(
+      //                         builder: (context) {
+      //                           return Login_Screen();
+      //                         },
+      //                       ),
+      //                     );
+      //                   })
+      //             ],
+      //           ),
+      //         ),
+      //       )
+      //     ],
+      //   )),
+      // ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -211,7 +215,12 @@ class _Home_ScreenState extends State<Home_Screen> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(50))),
                       child: MaterialButton(
-                        onPressed: () => {},
+                        onPressed: () => {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Payment_Home()))
+                        },
                         color: Colors.white,
                         child: Column(
                           children: <Widget>[
@@ -247,12 +256,12 @@ class _Home_ScreenState extends State<Home_Screen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Food_Service_Home()));
+                              builder: (context) => Shopping_Home()));
                     },
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
                       child: Image.asset(
-                        'assets/imgs/Food.jpg',
+                        'assets/imgs/SHopping1.jpg',
                         width: double.infinity,
                       ),
                     ),
@@ -275,15 +284,13 @@ class _Home_ScreenState extends State<Home_Screen> {
                 child: Material(
                   child: InkWell(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Payment_Home()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Category()));
                     },
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
                       child: Image.asset(
-                        'assets/imgs/paymentService.jpg',
+                        'assets/imgs/Services.jpg',
                         width: double.infinity,
                       ),
                     ),

@@ -36,7 +36,7 @@ class _CategoryState extends State<Category> {
                         borderSide: BorderSide(color: Colors.blue, width: 0.5),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
                         borderSide: BorderSide(color: Colors.blue, width: 0.5),
                       ),
                       prefixIcon: Icon(Icons.search),
@@ -48,51 +48,116 @@ class _CategoryState extends State<Category> {
             ),
             Column(
               children: [
-                CarouselSlider(
-                  items: [
-                    Material(
-                      child: InkWell(
-                        onTap: () {},
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(0.0),
-                          child: Image.asset(
-                            'assets/imgs/electrician3.jpg',
-                            width: double.infinity,
+                Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        color: Color(0xff0096be),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20.0),
+                          topRight: Radius.circular(20.0),
+                          bottomLeft: Radius.circular(20.0),
+                          bottomRight: Radius.circular(20.0),
+                        )),
+                    // color: Color(0xff0096be),
+                    child: CarouselSlider(
+                      items: [
+                        // Padding(
+                        //   padding: const EdgeInsets.all(8.0),
+                        //   child: Material(
+                        //     child: InkWell(
+                        //       onTap: () {},
+                        //       child: ClipRRect(
+                        //         borderRadius: BorderRadius.circular(20.0),
+                        //         child: Image.asset(
+                        //           'assets/imgs/electrician3.jpg',
+                        //           width: double.infinity,
+                        //         ),
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
+                        // Padding(
+                        //   padding: const EdgeInsets.all(8.0),
+                        //   child: Material(
+                        //     child: InkWell(
+                        //       onTap: () {},
+                        //       child: ClipRRect(
+                        //         borderRadius: BorderRadius.circular(20.0),
+                        //         child: Image.asset(
+                        //           'assets/imgs/metalFabrication.jpg',
+                        //           width: double.infinity,
+                        //         ),
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
+                        // Padding(
+                        //   padding: const EdgeInsets.all(8.0),
+                        //   child: Material(
+                        //     child: InkWell(
+                        //       onTap: () {},
+                        //       child: ClipRRect(
+                        //         borderRadius: BorderRadius.circular(20.0),
+                        //         child: Image.asset(
+                        //           'assets/imgs/onlineTaxi.png',
+                        //           width: double.infinity,
+                        //         ),
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
+
+                        Container(
+                          width: double.infinity,
+                          height: 150.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                    'assets/imgs/metalFabrication.jpg')),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(18.0)),
+                            color: Colors.redAccent,
                           ),
                         ),
-                      ),
-                    ),
-                    Material(
-                      child: InkWell(
-                        onTap: () {},
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(0.0),
-                          child: Image.asset(
-                            'assets/imgs/metalFabrication.jpg',
-                            width: double.infinity,
+                        Container(
+                          width: double.infinity,
+                          height: 150.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image:
+                                    AssetImage('assets/imgs/electrician3.jpg')),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(18.0)),
+                            color: Colors.redAccent,
                           ),
                         ),
-                      ),
-                    ),
-                    Material(
-                      child: InkWell(
-                        onTap: () {},
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(0.0),
-                          child: Image.asset(
-                            'assets/imgs/onlineTaxi.png',
-                            width: double.infinity,
+                        Container(
+                          width: double.infinity,
+                          height: 150.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image:
+                                    AssetImage('assets/imgs/onlineTaxi.png')),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(18.0)),
+                            color: Colors.redAccent,
                           ),
                         ),
+                      ],
+                      options: CarouselOptions(
+                        height: 160.0,
+                        autoPlay: true,
+                        autoPlayCurve: Curves.easeInOut,
+                        viewportFraction: 0.8,
+                        enlargeCenterPage: true,
                       ),
                     ),
-                  ],
-                  options: CarouselOptions(
-                      height: 180.0,
-                      autoPlay: true,
-                      autoPlayCurve: Curves.easeInOut,
-                      viewportFraction: 0.7,
-                      enlargeCenterPage: true),
+                  ),
                 ),
               ],
             ),
@@ -112,7 +177,7 @@ class _CategoryState extends State<Category> {
                                 builder: (context) => Food_Service_Home()));
                       },
                       child: Container(
-                        height: 120.0,
+                        height: 100.0,
                         width: 150,
                         decoration: BoxDecoration(
                           boxShadow: [
@@ -168,7 +233,7 @@ class _CategoryState extends State<Category> {
                                 builder: (context) => Category()));
                       },
                       child: Container(
-                        height: 120.0,
+                        height: 100.0,
                         width: 150,
                         decoration: BoxDecoration(
                           boxShadow: [
@@ -225,7 +290,7 @@ class _CategoryState extends State<Category> {
                 Column(
                   children: [
                     Container(
-                      height: 120.0,
+                      height: 100.0,
                       width: 150,
                       decoration: BoxDecoration(
                         boxShadow: [
@@ -272,7 +337,7 @@ class _CategoryState extends State<Category> {
                                 builder: (context) => Payment_Home()));
                       },
                       child: Container(
-                        height: 120.0,
+                        height: 100.0,
                         width: 150,
                         decoration: BoxDecoration(
                           boxShadow: [
